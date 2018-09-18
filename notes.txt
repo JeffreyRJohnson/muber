@@ -1,0 +1,57 @@
+sudo systemctl unmask mongodb
+sudo service mongodb enable
+sudo service mongodb start
+sudo service mongodb stop
+
+sudo service mongodb status
+
+node index.js
+
+
+JS
+React
+Node
+Databases
+
+middleware = pre & post save hooks
+init
+validate
+save 
+remove
+
+localgost 3050
+
+
+index.js ---------------------------
+const app = require('./app');
+
+app.listen(3050, () => {
+  console.log('running on port 3050');
+});
+
+app.js -----------------------------
+const express = require('express');
+const routes = require('./routes/routes');
+const app = express();
+
+routes(app);
+
+module.exports = app;
+
+routes/routes.js ------------------
+const DriversController = require('../controllers/drivers_controller');
+
+module.exports = app => {
+  app.get('/api', DriversController.greeting);
+};
+
+controllers/drivers_controller --------------------------
+module.exports = {
+  greeting(req, res) {
+    res.send({ hi: 'there' });
+  }
+};
+
+
+
+mongo uses longitude, latitude xy <->  ^
